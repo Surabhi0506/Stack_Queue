@@ -1,0 +1,15 @@
+STACK:
+Stack is a linear data structure which operates in LIFO(Last in First Out) manner.
+The top pointer provides top value of the stack.
+
+BASIC OPERATIONS:
+1. push() - pushing(storing) an element on the stack 
+2. pop() - removing(accessing) an element from the stack 
+
+APPLICATIONS:
+1. Function calls
+2. Recursion
+3. Arithmentic Expression evaluation 
+4. Syntax parsing 
+5. Memory management 
+6. Backtracking 
