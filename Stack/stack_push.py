@@ -15,9 +15,6 @@ class stack:
         new_node.next = self.top
         self.top=new_node
 
-    def pop(self, new_node):
-        
-
     def print(self):
         if self.isempty():
             print("Stack is empty")
