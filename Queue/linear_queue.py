@@ -14,4 +14,18 @@ class LQueue:
             self.rear=new_node
         else:
             self.front=self.rear=new_node
-            
+
+    def print(self):
+        temp=self.front
+        while temp:
+            print(temp.data, end="->")
+            temp=temp.next
+
+que=LQueue()
+que.enqueue(Node(20))
+que.enqueue(Node(60))
+que.enqueue(Node(78))
+que.enqueue(Node(88))
+que.enqueue(Node(10))
+que.enqueue(Node(54))
+que.print()
