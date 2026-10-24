@@ -1,3 +1,8 @@
-QUEUE:
-A queue is a linear structure which follows a particular order in which the operations are performed.
-The is is First In First Out.
+Queue Data structure:
+A queue is a linear structure which follows a particular order in which the operations are performed. The order is First In First Out(FIFO).
+A good example of a queue is any queue of customers for a resource where the customer that came first is served first.
+
+Basic Operations:
+1. enqueue(): insert(add) an item to the queue
+2. dequeue(): remove(access) an item from the queue
+3. front (first) and rear(last) pointers : new element is added to rear and element is removed from the front 
