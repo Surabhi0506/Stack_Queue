@@ -19,10 +19,12 @@ class Stack:
             print("Stack Underflow")
         else:
             temp = self.top
-            print("Popped element:", temp.data)
+            popped_data =  temp.data
             self.top = self.top.next
+            temp = None
+            return popped_data
 
-    def display(self):
+    def print(self):
         if self.isempty():
             print("Stack is empty")
         else:
@@ -56,12 +58,15 @@ class Queue:
             self.rear = new_node
 
     def dequeue(self):
-        if self.isempty():
-            print("Queue is empty")
-        else:
-            self.front = self.front.next
+        if self.front:
+            temp=self.front
+            dequeue_data=temp.data
+            self.front=self.front.next
             if self.front is None:
-                self.rear = None
+                self.rear=None
+            return dequeue_data
+        else:
+            return None
 
     def print(self):
         if self.isempty():
@@ -70,14 +75,18 @@ class Queue:
             print("Queue contains...")
             temp = self.front
             while temp:
-                print(temp.data)
+                print(temp.data,end = "->")
                 temp = temp.next
+            print()
 
-    def reverse_stack(s1):
-        q1 = Queue()
-        while not s1.isempty(): #pop from stack and enqueue to queue
-            q1.enqueue(Node(s1.pop()))
-        q1.print()
+def reverse_stack(s1):
+    q1 = Queue()
+    while not s1.isempty(): #pop from stack and enqueue to queue
+        q1.enqueue(Node(s1.pop()))
+    q1.print()
+    while not q1.isempty():
+        s1.push(Node(q1.dequeue()))
+    s1.print()
 
 q = Queue()
 q.enqueue(Node(10))
@@ -86,6 +95,7 @@ q.enqueue(Node(30))
 q.enqueue(Node(40))
 q.print()
 q.dequeue()
+print("after dequeue")
 q.print()
 
 st = Stack()
@@ -93,10 +103,8 @@ st.push(Node(10))
 st.push(Node(20))
 st.push(Node(30))
 st.push(Node(40))
-
-st.display()
-
+st.print()
 st.pop()
-
 print("After pop:")
-st.display()
+st.print()
+reverse_stack(st)
